@@ -52,6 +52,7 @@ app.use("/records", recordRoutes);
 app.use("/records/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
 
-app.listen(3000, function(){
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
 	console.log("The ImpulseGo Server Has Started!");
 });
