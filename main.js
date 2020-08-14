@@ -21,7 +21,8 @@ app.use(flash());
 app.locals.moment = require("moment");
 
 // MongoDB
-mongoose.connect("mongodb://localhost:27017/impulse_go", {
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/impulse_go"
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
