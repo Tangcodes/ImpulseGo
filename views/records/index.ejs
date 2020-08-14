@@ -1,0 +1,24 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+	<header class="jumbotron">
+		<h1>Welcome To ImpulseGo!</h1>
+		<p>Save money and say goodbye to impulse shopping </p>
+		<a class = "btn btn-primary btn-lg" href="records/new">Add new Record</a>
+	</header>
+	<div class="row text-center">
+		<% records.forEach(function(record) { %>
+			<div class="col-md-3 col-sm-6 mb-4">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title"><%= record.content %></h4>
+						<h5 class="card-text" ><%= record.isImpulse %></h5>
+						<a href="/records/<%= record._id %>" class="btn btn-primary">More Info</a>
+					</div>
+				</div>
+			</div>
+	    <% }); %>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
