@@ -21,7 +21,7 @@ app.use(flash());
 app.locals.moment = require("moment");
 
 // MongoDB
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/impulse_go"
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/impulse_go";
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -52,6 +52,6 @@ app.use("/records", recordRoutes);
 app.use("/records/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
 
-app.listen(3000, process.env.IP, function(){
+app.listen(3000, function(){
 	console.log("The ImpulseGo Server Has Started!");
 });
